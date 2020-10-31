@@ -16,8 +16,8 @@ module.exports = {
   // 斗鱼房间配置
   douyu: {
     roomApi: `http://open.douyucdn.cn/api/RoomApi/room/`,
-    roomId: [ // 斗鱼房间号或者别名
-      'zard',
+    roomId: [ // 斗鱼房间号ID
+      '196',
       '58428' // yyf房间
     ],
   },
