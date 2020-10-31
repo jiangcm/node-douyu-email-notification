@@ -18,7 +18,7 @@ Node.js小脚本,实现每10秒刷新斗鱼tv房间信息,若监听的主播开�
 
 ```
 ### 运行
-1. `git clone https://github.com/op8278/node-douyu-email-notification.git`  
-2. `cd node-douyu-email-notification`  
+1. `git clone https://github.com/jiangcm/node-douyu-server-notification.git`  
+2. `cd node-douyu-server-notification`  
 3. `npm install`  
 4. `node app.js`  
