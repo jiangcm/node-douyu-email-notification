@@ -4,7 +4,7 @@ const { sleep, getAllDouyuRoomInfoPromise, sendMail } = require('./uti/util.js')
 const config = require('./config/config.js')
 
 let preStreamState = {} // 主播之前的开播状态
-//此处填你申请的SCKEY.
+//此处填你申请的server酱的SCKEY.
 let SCKEY = 'SERVER_SCKEY';
 
 nodemailer.createTestAccount((err, account) => {
