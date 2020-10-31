@@ -2,6 +2,7 @@ const nodemailer = require('nodemailer')
 
 const { sleep, getAllDouyuRoomInfoPromise, sendMail } = require('./uti/util.js')
 const config = require('./config/config.js')
+var request = require('request');
 
 let preStreamState = {} // 主播之前的开播状态
 //此处填你申请的server酱的SCKEY.
