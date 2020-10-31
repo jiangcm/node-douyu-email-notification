@@ -13,7 +13,7 @@ Node.js小脚本,实现每10秒刷新斗鱼tv房间信息,若监听的主播开�
 - `SERVER_SCKEY` ： 你自己的SCKEY
 
 需要自己配置 `config.js` 文件：
-- `douyu.roomId` ： 监听的斗鱼房间列表(房间号或别名)
+- `douyu.roomId` ： 监听的斗鱼房间列表(房间号ID)
 - `delayTime` ：  延迟时间(默认每10秒刷新一次房间信息)
 
 ```
