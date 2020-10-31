@@ -4,6 +4,8 @@ const { sleep, getAllDouyuRoomInfoPromise, sendMail } = require('./uti/util.js')
 const config = require('./config/config.js')
 
 let preStreamState = {} // 主播之前的开播状态
+//此处填你申请的SCKEY.
+let SCKEY = 'SERVER_SCKEY';
 
 nodemailer.createTestAccount((err, account) => {
   // create reusable transporter object using the default SMTP transport
@@ -27,13 +29,17 @@ async function monitor(transporter) {
       if (roomInfo.room_status === '1') {
         console.log(`${roomInfo.owner_name} ---- 已经开播 ---- ${roomInfo.start_time}`)
         if (!preStreamState[roomInfo.room_id]) {
-          // 配置发送邮件信息
-          const mailOptions = Object.assign(config.emailDetail, { 
-            subject: roomInfo.owner_name, // 邮箱标题
-            text: roomInfo.room_name + roomInfo.start_time // 邮箱内容
+          // 推送server酱
+          test = '【' + roomInfo.owner_name + '】'
+          desp = '【' + roomInfo.owner_name + '】' +  roomInfo.room_name  + '\n\n' + roomInfo.start_time
+          request ({
+            url: `https://sc.ftqq.com/${SCKEY}.send`,
+            method: 'POST',
+            body: `text=${test}开播啦！&desp=${desp}`,
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
           })
-          // 发送邮件
-          sendMail(transporter, mailOptions)
           preStreamState[roomInfo.room_id] = true
         }
       } else {
